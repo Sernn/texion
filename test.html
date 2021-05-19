@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Hi</h2>
+
+    <script>
+      // Given a year, return the century it is in.
+      function centuryFromYear(year) {
+        return Math.ceil(year / 100);
+      }
+      console.log(centuryFromYear(1905));
+      console.log(centuryFromYear(1700));
+      console.log(centuryFromYear(2003));
+      console.log(centuryFromYear(1910));
+
+      // Given the string, check if it is a palindrome.
+      function isPalindrome(str) {
+        let reversed = str.split("").reverse().join("");
+        return reversed === str ? true : false;
+      }
+
+      console.log(isPalindrome("aabaa"));
+      console.log(isPalindrome("tnfodxxzqtivgnostongvitqzxxdofnt"));
+
+      //Given an array a that contains only numbers in the range from 1 to a.length, find the first duplicate number for which the second occurrence has the minimal index. In other words, if there are more than 1 duplicated numbers, return the number for which the second occurrence has a smaller index than the second occurrence of the other number does. If there are no such elements, return -1.
+      let a = [8, 1, 4, 8, 10, 1, 5, 7, 8, 7];
+      let b = [
+        28, 19, 13, 6, 34, 48, 50, 3, 47, 18, 15, 34, 16, 11, 13, 3, 2, 4, 46,
+        6, 7, 3, 18, 9, 32, 21, 3, 21, 50, 10, 45, 13, 22, 1, 27, 18, 3, 27, 30,
+        44, 12, 30, 40, 1, 1, 31, 6, 18, 33, 5,
+      ];
+      let c = [2, 1, 3, 5, 3, 2];
+      let d = [2, 2];
+      let e = [2, 4, 3, 5, 1];
+
+      function duplicate(arr) {
+        let data = {};
+
+        for (let i = 0; i < arr.length; i++) {
+          if (data[arr[i]] !== undefined) return arr[i];
+          else data[arr[i]] = i;
+        }
+        return -1;
+      }
+
+      console.log(duplicate(a));
+      console.log(duplicate(b));
+      console.log(duplicate(c));
+      console.log(duplicate(d));
+      console.log(duplicate(e));
+    </script>
+  </body>
+</html>
